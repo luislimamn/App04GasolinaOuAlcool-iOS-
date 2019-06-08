@@ -10,6 +10,36 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var precoAlcool: UITextField!
+    @IBOutlet weak var precoGasolina: UITextField!
+    @IBOutlet weak var qualCombustivel: UILabel!
+    
+    @IBAction func calcularPreco(_ sender: Any) {
+        
+        let valorAlcool: Double
+        let valorGasolina: Double
+        //let precoA: String = precoAlcool.text
+        //let precoG: String = precoGasolina.text
+        //if (precoA.isEmpity || precoG.isEmpity)
+        
+        if (precoAlcool.text == "" || precoGasolina.text == "") {
+            qualCombustivel.text = "Digite o Valor dos Combustiveis"
+        }else{
+            
+            valorAlcool = Double(precoAlcool.text!)!
+            valorGasolina = Double(precoGasolina.text!)!
+            
+            if (valorAlcool < (valorGasolina * 0.7)) {
+                qualCombustivel.text = "Melhor Abastecer com Alcool"
+            }else{
+                qualCombustivel.text = "Melhor Abastecer com Gasolina"
+            }
+        }
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
