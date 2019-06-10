@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     @IBAction func calcularPreco(_ sender: Any) {
         
+        view.endEditing(true)
         let valorAlcool: Double
         let valorGasolina: Double
         //let precoA: String = precoAlcool.text
@@ -35,7 +36,7 @@ class ViewController: UIViewController {
                 qualCombustivel.text = "Melhor Abastecer com Gasolina"
             }
         }
-        
+        view.endEditing(true)
         
     }
     
